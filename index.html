@@ -6445,7 +6445,10 @@ window.addEventListener("load", mediaSizer);
 
         var vizList = [
 
-                    "https://demo.tableau.com/t/LuizOliveira/views/HOSPITALITY-RoomsRevenueBrasil/ExecutiveSummary?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link"
+                    "https://demo.tableau.com/t/LuizOliveira/views/resultado_16607524616520/Resultados?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link",
+                    "https://demo.tableau.com/t/LuizOliveira/views/HUMANRESOURCES-HRExpensesDashboardBrasil_16607524616090/Cockpit?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link",
+                    "https://demo.tableau.com/t/LuizOliveira/views/FinanasCorporativas-PainelDemonstrativoFinanceiro_16607524626620/Cockpit-Finance?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link",
+                    "https://demo.tableau.com/t/LuizOliveira/views/1-XX-DesigningEffectiveDashboards/Intro?:showAppBanner=false&:display_count=n&:showVizHome=n&:origin=viz_share_link"
 
                 ];
         // Array of Tableau Server URLs for dashboard or sheet navigation.
@@ -6453,6 +6456,8 @@ window.addEventListener("load", mediaSizer);
         var viz,
             vizLen = vizList.length,
             vizCount = 0,
+            vhideTabs=true,
+            vhidToolbar=true,
             devType;
         var options = {
             device: devType,
@@ -6482,10 +6487,11 @@ window.addEventListener("load", mediaSizer);
             console.log("devtype: "+devType )
             console.log("launch0")
             launchViz(0);
-          
-
-    
-          
+            launchViz(1);
+            launchViz(2);
+            vhideTabs=false;
+            vhidToolbar=false;
+            launchViz(3);
            
             // Launches the viz again with the new sizing at the current index of vizList.
       }
@@ -6501,8 +6507,8 @@ window.addEventListener("load", mediaSizer);
                 device: devType,
                 width: vWidth,
                 height: vHeight,
-                hideTabs: true,
-                hideToolbar: true,
+                hideTabs: vhideTabs,
+                hideToolbar: vhidToolbar,
                 onFirstInteractive: function () {
                     listenToMarksSelection();
                 }
@@ -10493,7 +10499,33 @@ window.addEventListener("load", mediaSizer);
                         <div style="display: inline-block;">
                             <div id="vizContainer0" ></div>
                         </div></div>
+                    </div>
+                    <div class="vc_row wpb_row vc_row-fluid vc_row-o-content-middle full-width-content "
+                    style="color: rgb(255, 255, 255); visibility: visible;">
+
+                        <div style="text-align: center;">
+                            <div style="display: inline-block;">
+                                <div id="vizContainer1" ></div>
+                            </div></div>
+                    </div>
+                    <div class="vc_row wpb_row vc_row-fluid vc_row-o-content-middle full-width-content "
+                    style="color: rgb(255, 255, 255); visibility: visible;">
+
+                            <div style="text-align: center;">
+                                <div style="display: inline-block;">
+                                    <div id="vizContainer2" ></div>
+                                </div></div>
                         </div>
+
+                        <div class="vc_row wpb_row vc_row-fluid vc_row-o-content-middle full-width-content "
+                        style="color: rgb(255, 255, 255); visibility: visible;">
+    
+                                <div style="text-align: center;">
+                                    <div style="display: inline-block;">
+                                        <div id="vizContainer3" ></div>
+                                    </div></div>
+                            </div>
+
                     <div class="vc_row wpb_row vc_row-fluid vc_custom_1609768864513 vc_row-o-content-middle full-width-content "
                         style="color: rgb(255, 255, 255); margin-left: -403px; padding-left: 0px; padding-right: 0px; visibility: visible; width: 1976px; margin-right: 0px;">
 
